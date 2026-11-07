@@ -11,7 +11,7 @@ export const translations = i18n
       displayName: 'English',
     },
     fr: {
-      displayName: 'Baguette',
+      displayName: 'French',
     },
     de: {
       displayName: 'Deutsch',
