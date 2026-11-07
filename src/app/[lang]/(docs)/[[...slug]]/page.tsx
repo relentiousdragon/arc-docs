@@ -11,9 +11,9 @@ import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { appDescription, appIcon, appName } from '@/lib/shared';
 
-export default async function Page(props: PageProps<'/[[...slug]]'>) {
+export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = source.getPage(params.slug, params.lang);
   if (!page) notFound();
 
   const MDX = page.data.body;
@@ -38,9 +38,9 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: PageProps<'/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(props: PageProps<'/[lang]/[[...slug]]'>): Promise<Metadata> {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = source.getPage(params.slug, params.lang);
   if (!page) notFound();
 
   const title = page.data.title

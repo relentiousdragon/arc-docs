@@ -1,8 +1,10 @@
 import { Inter } from 'next/font/google';
-import { Provider } from '@/components/provider';
+import { RootProvider } from 'fumadocs-ui/provider/next';
 import './global.css';
 import type { Metadata, Viewport } from "next";
 import { appDescription, appIcon, appName, appUri } from '@/lib/shared';
+import { i18nProvider } from 'fumadocs-ui/i18n';
+import { translations } from '@/lib/layout.shared';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,11 +36,16 @@ export const viewport: Viewport = {
   themeColor: "#192d46",
 };
 
-export default function Layout({ children }: LayoutProps<'/'>) {
+export default async function Layout({ params, children }: LayoutProps<'/[lang]'>) {
+  const { lang } = await params;
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang={lang} className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <Provider>{children}</Provider>
+        <RootProvider
+          i18n={i18nProvider(translations, lang)}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   );

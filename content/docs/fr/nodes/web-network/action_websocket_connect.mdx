@@ -1,0 +1,25 @@
+---
+title: "Connect WebSocket"
+---
+
+Opens a WebSocket connection to a public host and waits until it is ready.
+
+## Inputs
+
+| Pin Name | Type | Default Value |
+| :-: | :-: | :-: |
+| Exec | exec |  |
+| Connection ID | string | main |
+| WebSocket URL | string |  |
+| Protocols | string |  |
+| Connect Timeout (ms) | number | 10000 |
+
+## Outputs
+
+| Pin Name | Type |
+| :-: | :-: |
+| Connected | exec |
+| Failed | exec |
+| Connection ID | string |
+| Connected | boolean |
+| Error | string |

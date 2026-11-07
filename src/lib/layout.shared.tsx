@@ -1,7 +1,24 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { i18n } from '@/lib/i18n';
+import { uiTranslations } from 'fumadocs-ui/i18n';
 import { appIcon, appName, appWebsite, gitConfig } from './shared';
 
-export function baseOptions(): BaseLayoutProps {
+export const translations = i18n
+  .translations()
+  .extend(uiTranslations())
+  .add({
+    en: {
+      displayName: 'English',
+    },
+    fr: {
+      displayName: 'Baguette',
+    },
+    de: {
+      displayName: 'Deutsch',
+    }
+  });
+
+export function baseOptions(locale: string): BaseLayoutProps {
   return {
     nav: {
       title: <>
@@ -23,5 +40,6 @@ export function baseOptions(): BaseLayoutProps {
       },
     ],
     githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
+    i18n: true,
   };
 }

@@ -1,0 +1,21 @@
+---
+title: "Wait Until Condition"
+---
+
+Checks a boolean condition until it becomes true. Times out through the Timed Out branch, polling is bounded.
+
+## Inputs
+
+| Pin Name | Type | Default Value |
+| :-: | :-: | :-: |
+| Exec | exec |  |
+| Condition | boolean | false |
+| Timeout (ms) | number | 30000 |
+| Check Every (ms) | number | 250 |
+
+## Outputs
+
+| Pin Name | Type |
+| :-: | :-: |
+| Ready | exec |
+| Timed Out | exec |

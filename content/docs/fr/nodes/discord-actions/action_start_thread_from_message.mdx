@@ -1,0 +1,26 @@
+---
+title: "Start Thread from Message"
+---
+
+Starts a public thread from an existing message in a text channel.
+
+## Inputs
+
+| Pin Name | Type | Default Value |
+| :-: | :-: | :-: |
+| Exec | exec |  |
+| Parent Channel ID | string |  |
+| Message ID | string |  |
+| Thread Name | string |  |
+| Auto Archive (minutes) | number | 1440 |
+| Slowmode (seconds) | number | 0 |
+| Audit Log Reason | string |  |
+
+## Outputs
+
+| Pin Name | Type |
+| :-: | :-: |
+| Exec | exec |
+| Thread ID | string |
+| Parent Channel ID | string |
+| Success | boolean |
