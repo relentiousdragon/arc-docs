@@ -40,6 +40,5 @@ export function baseOptions(locale: string): BaseLayoutProps {
       },
     ],
     githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
-    i18n: true,
   };
 }
