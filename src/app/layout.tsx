@@ -1,10 +1,9 @@
 import { Inter } from 'next/font/google';
-import { RootProvider } from 'fumadocs-ui/provider/next';
 import './global.css';
+import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from "next";
 import { appDescription, appIcon, appName, appUri } from '@/lib/shared';
-import { i18nProvider } from 'fumadocs-ui/i18n';
-import { translations } from '@/lib/layout.shared';
+
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,16 +35,11 @@ export const viewport: Viewport = {
   themeColor: "#192d46",
 };
 
-export default async function Layout({ params, children }: LayoutProps<'/[lang]'>) {
-  const { lang } = await params;
+export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang={lang} className={inter.className} suppressHydrationWarning>
+    <html className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <RootProvider
-          i18n={i18nProvider(translations, lang)}
-        >
-          {children}
-        </RootProvider>
+        {children}
       </body>
     </html>
   );

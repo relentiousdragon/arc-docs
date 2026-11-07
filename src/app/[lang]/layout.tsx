@@ -1,4 +1,7 @@
 import { source } from '@/lib/source';
+import { RootProvider } from 'fumadocs-ui/provider/next';
+import { i18nProvider } from 'fumadocs-ui/i18n';
+import { translations } from '@/lib/layout.shared';
 import { baseOptions } from '@/lib/layout.shared';
 // import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { DocsLayout } from '@/layouts/spacious';
@@ -6,8 +9,12 @@ import { DocsLayout } from '@/layouts/spacious';
 export default async function Layout({ params, children }: LayoutProps<'/[lang]'>) {
   const { lang } = await params;
   return (
-    <DocsLayout {...baseOptions(lang)} tree={source.getPageTree(lang)}>
-      {children}
-    </DocsLayout>
+    <RootProvider
+      i18n={i18nProvider(translations,)}
+    >
+      <DocsLayout {...baseOptions(lang)} tree={source.getPageTree(lang)}>
+        {children}
+      </DocsLayout>
+    </RootProvider>
   );
 }

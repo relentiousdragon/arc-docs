@@ -38,7 +38,7 @@ function generateMdx(obj) {
     });
   }
 
-  return mdx;
+  return mdx.replaceAll("{", "\\{").replaceAll("}", "\\}");
 }
 
 async function processFiles() {
