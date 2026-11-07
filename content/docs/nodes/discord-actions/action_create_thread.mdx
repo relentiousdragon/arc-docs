@@ -1,0 +1,28 @@
+---
+title: "Create Thread"
+---
+
+Creates a public or private thread inside a text channel. Requires the matching thread permission.
+
+## Inputs
+
+| Pin Name | Type | Default Value |
+| :-: | :-: | :-: |
+| Exec | exec |  |
+| Parent Channel ID | string |  |
+| Message ID (Optional) | string |  |
+| Thread Name | string |  |
+| Thread Type | string | public |
+| Auto Archive (minutes) | number | 1440 |
+| Slowmode (seconds) | number | 0 |
+| Members Can Invite | boolean | true |
+| Audit Log Reason | string |  |
+
+## Outputs
+
+| Pin Name | Type |
+| :-: | :-: |
+| Exec | exec |
+| Thread ID | string |
+| Parent Channel ID | string |
+| Success | boolean |

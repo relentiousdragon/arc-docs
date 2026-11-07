@@ -1,0 +1,34 @@
+---
+title: "HTTP Request (Retry)"
+---
+
+Retries temporary network errors and HTTP 408, 425, 429, and 5xx responses with bounded backoff. Non-idempotent methods are not retried unless explicitly enabled.
+
+## Inputs
+
+| Pin Name | Type | Default Value |
+| :-: | :-: | :-: |
+| Exec | exec |  |
+| URL | string |  |
+| Method | string | GET |
+| Headers (JSON) | string | {} |
+| User-Agent | string |  |
+| Body | string |  |
+| Timeout (ms) | number | 10000 |
+| Max response bytes | number | 1048576 |
+| Max attempts | number | 3 |
+| Base retry delay (ms) | number | 500 |
+| Retry POST/other methods | boolean | false |
+
+## Outputs
+
+| Pin Name | Type |
+| :-: | :-: |
+| Exec | exec |
+| Status | number |
+| 2xx | boolean |
+| Response Body | string |
+| Response Headers (JSON) | string |
+| JSON | object |
+| Attempts | number |
+| Error | string |
