@@ -1,22 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { i18n } from '@/lib/i18n';
-import { uiTranslations } from 'fumadocs-ui/i18n';
 import { appIcon, appName, appWebsite, gitConfig } from './shared';
-
-export const translations = i18n
-  .translations()
-  .extend(uiTranslations())
-  .add({
-    en: {
-      displayName: 'English',
-    },
-    fr: {
-      displayName: 'French',
-    },
-    de: {
-      displayName: 'Deutsch',
-    }
-  });
 
 export function baseOptions(locale: string): BaseLayoutProps {
   return {
