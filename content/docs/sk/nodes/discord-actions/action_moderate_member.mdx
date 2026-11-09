@@ -1,0 +1,26 @@
+---
+title: "Moderate Member"
+---
+
+Times out, kicks, bans, or unbans a server member. Route failures through the Failed output.
+
+## Inputs
+
+| Názov Pinu | Typ Pinu | Predvolená Hodnota |
+| :-: | :-: | :-: |
+| Exec | exec |  |
+| Server ID | string |  |
+| User ID | string |  |
+| Action | string | timeout |
+| Timeout (minutes) | number | 10 |
+| Ban message deletion (seconds) | number | 0 |
+| Reason | string |  |
+
+## Outputs
+
+| Názov Pinu | Typ Pinu |
+| :-: | :-: |
+| Succeeded | exec |
+| Failed | exec |
+| Success | boolean |
+| Error | string |

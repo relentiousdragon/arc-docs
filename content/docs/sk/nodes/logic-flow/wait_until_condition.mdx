@@ -1,0 +1,21 @@
+---
+title: "Wait Until Condition"
+---
+
+Checks a boolean condition until it becomes true. Times out through the Timed Out branch, polling is bounded.
+
+## Inputs
+
+| Názov Pinu | Typ Pinu | Predvolená Hodnota |
+| :-: | :-: | :-: |
+| Exec | exec |  |
+| Condition | boolean | false |
+| Timeout (ms) | number | 30000 |
+| Check Every (ms) | number | 250 |
+
+## Outputs
+
+| Názov Pinu | Typ Pinu |
+| :-: | :-: |
+| Ready | exec |
+| Timed Out | exec |

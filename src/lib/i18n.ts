@@ -1,5 +1,5 @@
 import { defineI18n } from 'fumadocs-core/i18n';
-import translations from "./translations.json";
+import translations from "@/data/translations.json";
 
 export const i18n = defineI18n({
   defaultLanguage: 'en',

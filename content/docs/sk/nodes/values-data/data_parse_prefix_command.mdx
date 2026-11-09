@@ -1,0 +1,21 @@
+---
+title: "Parse Prefix Command"
+---
+
+Checks for a prefix, extracts the command, and parses whitespace-separated arguments. Quoted arguments can contain spaces.
+
+## Inputs
+
+| Názov Pinu | Typ Pinu | Predvolená Hodnota |
+| :-: | :-: | :-: |
+| Message Content | string |  |
+| Prefix | string | ! |
+
+## Outputs
+
+| Názov Pinu | Typ Pinu |
+| :-: | :-: |
+| Recognized | boolean |
+| Command | string |
+| Arguments | object |
+| Argument Count | number |

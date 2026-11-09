@@ -1,0 +1,26 @@
+---
+title: "HTTP Download File"
+---
+
+Downloads a public file over HTTP or HTTPS as a bounded binary attachment. Connect File to a message or interaction reply Files input.
+
+## Inputs
+
+| Názov Pinu | Typ Pinu | Predvolená Hodnota |
+| :-: | :-: | :-: |
+| Exec | exec |  |
+| URL | string |  |
+| User-Agent | string |  |
+| Timeout (ms) | number | 20000 |
+| Max file bytes | number | 20971520 |
+
+## Outputs
+
+| Názov Pinu | Typ Pinu |
+| :-: | :-: |
+| Exec | exec |
+| File | object |
+| File Name | string |
+| Content Type | string |
+| Bytes | number |
+| Error | string |
