@@ -4,7 +4,7 @@ import {
   DocsPage,
   DocsTitle,
   DocsDescription
-} from "@/layouts/spacious/page"; // 'fumadocs-ui/layouts/docs/page';
+} from "@/layouts/spacious/page";
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/components/mdx';
 import type { Metadata } from 'next';
