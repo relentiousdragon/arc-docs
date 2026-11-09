@@ -67,6 +67,8 @@
     "Type(type table)": "Typ",
     "View as Markdown(page actions)": "Pozrieť ako Markdown",
     "displayName": "Slovensky",
+    "Inputs(node info table)": "Vstupy",
+    "Outputs(node info table)": "Výstupy",
     "Pin Name(node info table)": "Názov Pinu",
     "Pin Type(node info table)": "Typ Pinu",
     "Default Value(node info table)": "Predvolená Hodnota"
