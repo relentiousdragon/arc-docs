@@ -12,7 +12,7 @@ const outputDir = join(__dirname, "content/docs");
 
 const translations = JSON.parse(readFileSync(join(__dirname, "src/data/translations.json"), "utf-8"));
 
-const defaults = { "Description": "Description", "Inputs": "Inputs", "Outputs": "Outputs", "Pin Name": "Pin Name", "Pin Type": "Pin Type", "Default Value": "Default Value" };
+const defaults = { "Pin Description": "Pin Description", "Inputs": "Inputs", "Outputs": "Outputs", "Pin Name": "Pin Name", "Pin Type": "Pin Type", "Default Value": "Default Value" };
 const t = (lang, key) => translations[lang]?.[`${key}(node info table)`] ?? defaults[key];
 
 const escape = s => String(s).replaceAll("{", "\\{").replaceAll("}", "\\}").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
