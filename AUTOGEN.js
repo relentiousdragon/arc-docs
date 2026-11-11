@@ -18,7 +18,7 @@ const t = (lang, key) => translations[lang]?.[`${key}(node info table)`] ?? defa
 const escape = s => String(s).replaceAll("{", "\\{").replaceAll("}", "\\}").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
 function generateMdx(obj, lang) {
-  const pin = t(lang, "Pin Name"), type = t(lang, "Pin Type"), def = t(lang, "Default Value"), inp = t(lang, "Inputs"), out = t(lang, "Outputs"), desc = t(lang, "Description");
+  const pin = t(lang, "Pin Name"), type = t(lang, "Pin Type"), def = t(lang, "Default Value"), inp = t(lang, "Inputs"), out = t(lang, "Outputs"), desc = t(lang, "Pin Description");
   let mdx = `---\ntitle: "${obj.label}"\n---\n\n${obj.description}\n`;
 
   if (obj.inputs?.length) {
