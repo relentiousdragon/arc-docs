@@ -1,12 +1,11 @@
-import { Inter } from 'next/font/google';
-import './global.css';
-import type { ReactNode } from 'react';
+import { Inter } from "next/font/google";
+import "./global.css";
+import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
-import { appDescription, appIcon, appName, appUri } from '@/lib/shared';
-
+import { appDescription, appIcon, appName, appUri } from "@/lib/shared";
 
 const inter = Inter({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -35,12 +34,14 @@ export const viewport: Viewport = {
   themeColor: "#192d46",
 };
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html className={inter.className} suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen">
-        {children}
-      </body>
+      <body className="flex flex-col min-h-screen">{children}</body>
     </html>
   );
 }
