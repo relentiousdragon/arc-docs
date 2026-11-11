@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     images: appBanner,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     description: appDescription,
     images: appBanner,
   },
