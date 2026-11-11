@@ -1,17 +1,17 @@
-import { source } from '@/lib/source';
+import { source } from "@/lib/source";
 import {
   DocsBody,
   DocsPage,
   DocsTitle,
-  DocsDescription
+  DocsDescription,
 } from "@/layouts/spacious/page";
-import { notFound } from 'next/navigation';
-import { getMDXComponents } from '@/components/mdx';
-import type { Metadata } from 'next';
-import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { appDescription, appIcon, appName } from '@/lib/shared';
+import { notFound } from "next/navigation";
+import { getMDXComponents } from "@/components/mdx";
+import type { Metadata } from "next";
+import { createRelativeLink } from "fumadocs-ui/mdx";
+import { appDescription, appIcon, appName } from "@/lib/shared";
 
-export default async function Page(props: PageProps<'/[lang]/[[...slug]]'>) {
+export default async function Page(props: PageProps<"/[lang]/[[...slug]]">) {
   const params = await props.params;
   const page = source.getPage(params.slug, params.lang);
   if (!page) notFound();
@@ -38,7 +38,9 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: PageProps<'/[lang]/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(
+  props: PageProps<"/[lang]/[[...slug]]">,
+): Promise<Metadata> {
   const params = await props.params;
   const page = source.getPage(params.slug, params.lang);
   if (!page) notFound();

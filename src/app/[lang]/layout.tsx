@@ -1,19 +1,18 @@
-import { source } from '@/lib/source';
-import { RootProvider } from 'fumadocs-ui/provider/next';
-import { i18nProvider } from 'fumadocs-ui/i18n';
-import { translationsAPI } from '@/lib/translations';
-import { baseOptions } from '@/lib/layout.shared';
-import { DocsLayout } from '@/layouts/spacious';
+import { source } from "@/lib/source";
+import { baseOptions } from "@/lib/layout.shared";
+import { DocsLayout } from "@/layouts/spacious";
+import { Provider } from "@/components/provider";
 
-export default async function Layout({ params, children }: LayoutProps<'/[lang]'>) {
+export default async function Layout({
+  params,
+  children,
+}: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   return (
-    <RootProvider
-      i18n={i18nProvider(translationsAPI, lang)}
-    >
+    <Provider lang={lang}>
       <DocsLayout {...baseOptions(lang)} tree={source.getPageTree(lang)}>
         {children}
       </DocsLayout>
-    </RootProvider>
+    </Provider>
   );
 }
