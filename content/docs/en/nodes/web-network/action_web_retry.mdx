@@ -6,7 +6,7 @@ Retries temporary network errors and HTTP 408, 425, 429, and 5xx responses with 
 
 ## Inputs
 
-| Pin Name | Pin Type | Default Value | undefined |
+| Pin Name | Pin Type | Default Value | Pin Description |
 | :-: | :-: | :-: | :-: |
 | Exec | exec |  | Starts the retrying HTTP request. |
 | URL | string |  | Public HTTP or HTTPS URL to request. |
@@ -22,7 +22,7 @@ Retries temporary network errors and HTTP 408, 425, 429, and 5xx responses with 
 
 ## Outputs
 
-| Pin Name | Pin Type | undefined |
+| Pin Name | Pin Type | Pin Description |
 | :-: | :-: | :-: |
 | Exec | exec | Continues after a request succeeds or retries are exhausted. |
 | Status | number | HTTP status code returned by the final response. |
